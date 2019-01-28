@@ -1,0 +1,50 @@
+define wp
+        echo "
+
+        set $i = 0
+        while (1 == 1)
+                set $c = (char)(($arg0)[$i++])
+                if ($c == '\0')
+                        loop_break
+                end
+                printf "%c", $c
+        end
+
+        echo "\n
+end
+
+define zp
+        echo "
+
+        set $i = 0
+        while (1 == 1)
+                set $c = (char)(($arg0)[$i++])
+                if ($c == '\0')
+                        loop_break
+                end
+                printf "%c", ($c -128)
+        end
+
+        echo "\n
+end
+
+
+
+
+document wp
+wp <wstr>
+print multi byte which is utf8, unicode
+end
+
+set print pretty on
+
+
+python
+import gdb
+import sys
+import os
+sys.path.insert(0, os.path.expanduser("/hanmail"))
+def setup_python(event):
+    import libpython
+gdb.events.new_objfile.connect(setup_python)
+end

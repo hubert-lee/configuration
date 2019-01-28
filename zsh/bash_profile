@@ -1,0 +1,12 @@
+export SUBUSER=hubert
+export HOME=/data1/users/hubert
+export SHELL=/bin/zsh
+cd ${HOME}
+exec $SHELL -l
+
+
+
+
+
+
+

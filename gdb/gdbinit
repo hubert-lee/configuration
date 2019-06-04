@@ -38,13 +38,14 @@ end
 
 set print pretty on
 
+#python
+#import gdb
+#import sys
+#import os
+#sys.path.insert(0, os.path.expanduser("/hanmail"))
+#def setup_python(event):
+#    import libpython
+#gdb.events.new_objfile.connect(setup_python)
+#end
 
-python
-import gdb
-import sys
-import os
-sys.path.insert(0, os.path.expanduser("/hanmail"))
-def setup_python(event):
-    import libpython
-gdb.events.new_objfile.connect(setup_python)
-end
+

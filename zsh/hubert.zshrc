@@ -109,6 +109,7 @@ fi
 if [ "$(uname)" = "Darwin" ]; then
     alias ls="ls -G"
     alias ldd="otool -L"
+	alias ctags="$(brew --prefix)/bin/ctags"
 fi
 
 
@@ -186,4 +187,4 @@ function han {
 ##########
 ulimit -c unlimited
 
-
+eval "$(direnv hook zsh)"
